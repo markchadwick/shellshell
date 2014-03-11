@@ -1,9 +1,10 @@
-package main
+package shellshell
 
+/*
 import (
-	"github.com/GeertJohan/go.linenoise"
+	"os"
 
-	"log"
+	"github.com/GeertJohan/go.linenoise"
 )
 
 type runner struct {
@@ -18,8 +19,11 @@ func (r *runner) Loop() error {
 		}
 		return r.shell.CloseWithError(err)
 	}
-	log.Printf("line: '%s'", line)
-	return nil
+	err = r.shell.Handle(line, os.Stdin, os.Stdout, os.Stderr)
+	if err != nil {
+		linenoise.AddHistory(line)
+	}
+	return err
 }
 
 func Run(s Shell) (err error) {
@@ -31,3 +35,4 @@ func Run(s Shell) (err error) {
 		}
 	}
 }
+*/
